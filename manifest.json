@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "My Melody",
+  "browser_action":
+    {
+      "default_icon": "myMelodyImage.png",
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+         "storage"
+       ],
+
+  "background": {
+    "scripts": ["jquery.min.js","background.js"]
+  },
+
+  "content_scripts": [
+    {
+    "matches": [
+        "https://*.spotify.com/*"
+    ],
+    "js": ["jquery.min.js","background.js"],
+    "run_at": "document_end"
+  }
+  ],
+
+  "description": "Your Music based on What You Want to Listen To.",
+  "version": "1",
+  "author": "Divya Bhookya"
+
+}
